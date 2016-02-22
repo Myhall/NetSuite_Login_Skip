@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "NetSuite login skip",
+  "description": "This extension allows you to skip the login page in case you have already logged in in different tab.",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["ns_login_skip.js"]
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
