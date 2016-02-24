@@ -6,6 +6,9 @@
     "author": "Michal Sorentiny",
     "homepage_url": "https://github.com/Myhall/NetSuite_Login_Skip",
     "version": "0.2",
+    "icons": {
+        "128": "128_icon.png"
+    },
     "page_action": {
         "default_icon": "icon.png"
     },
