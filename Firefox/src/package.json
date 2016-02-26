@@ -1,0 +1,17 @@
+{
+  "title": "Skip Netsuite Login",
+  "name": "src",
+  "version": "0.0.1",
+  "description": "This add-on makes you able to skip the NetSuite login page in case you have already logged-in in the different tab.",
+  "main": "index.js",
+  "author": "Michal Sorentiny",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "NetSuite",
+    "login"
+  ]
+}
