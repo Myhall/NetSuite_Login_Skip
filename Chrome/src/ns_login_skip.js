@@ -12,14 +12,15 @@ function skipNetSuiteLoginInCurrentTab(currentTab)
 
 function removeLoginPartFromDecodedUrl(url)
 {
-    return url.replace("/pages/login.jsp?rdt=", "");
+	var replaceRegex = /\/app\/login\/secure\/loginrouter\.nl\?(c=.+)?&?rdt=/;
+    return url.replace(replaceRegex, "");
 }
 
 function showPageActionInNetsuiteTab(tabId, selectInfo)
 {
     chrome.tabs.get(tabId, function(tab)
     {
-        var loginPageRegex = /https:\/\/.*netsuite\.com\/pages\/login\.jsp\?rdt=.*/;
+        var loginPageRegex = /https:\/\/.*netsuite\.com\/app\/login\/secure\/loginrouter\.nl.*/;
         if(loginPageRegex.test(tab.url))
         {
             chrome.pageAction.show(tabId);
@@ -27,5 +28,8 @@ function showPageActionInNetsuiteTab(tabId, selectInfo)
     });
 }
 
-chrome.pageAction.onClicked.addListener(function (tab) {skipNetSuiteLoginInCurrentTab(tab);});
+chrome.pageAction.onClicked.addListener(
+	function (tab) {
+		skipNetSuiteLoginInCurrentTab(tab);
+	});
 chrome.tabs.onSelectionChanged.addListener(showPageActionInNetsuiteTab);

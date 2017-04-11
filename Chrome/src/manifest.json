@@ -5,7 +5,7 @@
     "description": "This extension allows you to skip the login page in case you have already logged in in different tab.",
     "author": "Michal Sorentiny",
     "homepage_url": "https://github.com/Myhall/NetSuite_Login_Skip",
-    "version": "0.2",
+    "version": "0.3",
     "icons": {
         "128": "128_icon.png"
     },
