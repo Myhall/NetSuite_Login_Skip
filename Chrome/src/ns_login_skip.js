@@ -1,3 +1,6 @@
+const replaceRegex = /\/app\/login\/secure\/enterpriselogin\.nl\?(c=.+)?&?redirect=/;
+const loginPageRegex = /https:\/\/.*netsuite\.com\/app\/login\/secure\/enterpriselogin\.nl.*/;
+
 function skipNetSuiteLoginInCurrentTab(currentTab)
 {
     var currentUrl = currentTab.url;
@@ -12,7 +15,6 @@ function skipNetSuiteLoginInCurrentTab(currentTab)
 
 function removeLoginPartFromDecodedUrl(url)
 {
-	var replaceRegex = /\/app\/login\/secure\/loginrouter\.nl\?(c=.+)?&?rdt=/;
     return url.replace(replaceRegex, "");
 }
 
@@ -20,7 +22,6 @@ function showPageActionInNetsuiteTab(tabId, selectInfo)
 {
     chrome.tabs.get(tabId, function(tab)
     {
-        var loginPageRegex = /https:\/\/.*netsuite\.com\/app\/login\/secure\/loginrouter\.nl.*/;
         if(loginPageRegex.test(tab.url))
         {
             chrome.pageAction.show(tabId);
